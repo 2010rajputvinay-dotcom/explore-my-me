@@ -1,0 +1,12 @@
+{
+  "name": "Explore by Me",
+  "short_name": "Explore",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#10131a",
+  "theme_color": "#8d7cff",
+  "description": "Discover, connect and communicate.",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}

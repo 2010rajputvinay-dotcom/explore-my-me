@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Explore by Me — V2</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#090b10;color:#f7f7fb;font-family:Inter,Arial,sans-serif}.wrap{max-width:900px;margin:auto;min-height:100vh;background:#10131a}.top{padding:22px 18px 14px;border-bottom:1px solid #262b35;position:sticky;top:0;background:#10131af2;backdrop-filter:blur(14px);z-index:4}.brand{font-size:25px;font-weight:800}.brand b{color:#8d7cff}.sub{color:#969daa;font-size:13px;margin-top:5px}.search{width:100%;margin-top:14px;padding:13px;border-radius:14px;border:1px solid #2b303b;background:#1a1e27;color:white;font-size:16px}.content{padding:16px 16px 100px}.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:15px}.tabs button{white-space:nowrap;padding:10px 14px;border-radius:999px;border:1px solid #303642;background:#181c24;color:#b8bdc8}.tabs button.active{background:#8d7cff;color:white;border-color:#8d7cff}.page{display:none}.page.active{display:block}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.card{background:#191d25;border:1px solid #292e39;border-radius:18px;padding:15px}.profile{display:flex;align-items:center;gap:11px}.avatar{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#8d7cff,#4b9dff);font-weight:800}.name{font-weight:750}.muted{color:#9299a7;font-size:13px}.btn{margin-top:12px;width:100%;padding:11px;border:0;border-radius:12px;background:#8d7cff;color:white;font-weight:700}.btn.alt{background:#252a34;color:#d8dce5}.msg{display:flex;gap:11px;align-items:center;padding:14px 0;border-bottom:1px solid #282d36}.bubble{background:#222733;border-radius:15px;padding:11px 13px;margin:10px 0;max-width:80%;color:#e7e9ee}.mine{margin-left:auto;background:#6559c9}.composer{display:flex;gap:8px;margin-top:14px}.composer input{flex:1;min-width:0;padding:12px;border-radius:12px;border:1px solid #303642;background:#191d25;color:white}.composer button{border:0;border-radius:12px;padding:0 16px;background:#8d7cff;color:white;font-weight:700}.note{padding:12px;border-radius:14px;background:#202530;color:#bfc5d0;font-size:13px;margin-bottom:14px}.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(900px,100%);display:flex;justify-content:space-around;background:#151921f5;border-top:1px solid #292e38;padding:9px 4px 12px;backdrop-filter:blur(14px);z-index:5}.bottom button{background:none;border:0;color:#9299a7;font-size:12px;padding:5px 8px}.bottom button.active{color:white}@media(max-width:560px){.grid{grid-template-columns:1fr}}
+</style>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#10131a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">Explore <b>by Me</b></div><div class="sub">Discover • Connect • Communicate</div><input id="search" class="search" placeholder="Search people or communities..."></header>
+<main class="content">
+<div class="tabs">
+<button class="active" data-page="home">Home</button><button data-page="explore">Explore</button><button data-page="messages">Messages</button><button data-page="profile">Profile</button>
+</div>
+
+<section id="home" class="page active">
+<div class="note">Welcome! This V2 is ready for Firebase connection. The demo stores actions only while this page is open.</div>
+<h2>People you may like</h2>
+<div class="grid" id="people">
+<div class="card item"><div class="profile"><div class="avatar">A</div><div><div class="name">Aarav</div><div class="muted">Photography • Travel</div></div></div><button class="btn connect">Connect</button></div>
+<div class="card item"><div class="profile"><div class="avatar">R</div><div><div class="name">Riya</div><div class="muted">Art • Music</div></div></div><button class="btn connect">Connect</button></div>
+<div class="card item"><div class="profile"><div class="avatar">K</div><div><div class="name">Kabir</div><div class="muted">Fitness • Sports</div></div></div><button class="btn connect">Connect</button></div>
+<div class="card item"><div class="profile"><div class="avatar">S</div><div><div class="name">Sara</div><div class="muted">Books • Writing</div></div></div><button class="btn connect">Connect</button></div>
+</div>
+</section>
+
+<section id="explore" class="page">
+<h2>Communities</h2><div class="grid">
+<div class="card item"><div class="name">Photography Club</div><div class="muted">2.4K members</div><button class="btn join">Join</button></div>
+<div class="card item"><div class="name">Fitness & Sports</div><div class="muted">1.8K members</div><button class="btn join">Join</button></div>
+<div class="card item"><div class="name">Travel & Adventure</div><div class="muted">3.1K members</div><button class="btn join">Join</button></div>
+<div class="card item"><div class="name">Study & Careers</div><div class="muted">4.2K members</div><button class="btn join">Join</button></div>
+</div>
+</section>
+
+<section id="messages" class="page">
+<h2>Messages</h2><div id="chat"><div class="msg"><div class="avatar">A</div><div><div class="name">Aarav</div><div class="muted">Online demo contact</div></div></div><div class="bubble">Hey! Welcome to Explore by Me 👋</div></div>
+<div class="composer"><input id="message" placeholder="Write a message..."><button id="send">Send</button></div>
+</section>
+
+<section id="profile" class="page">
+<h2>My Profile</h2><div class="card"><div class="profile"><div class="avatar">M</div><div><div class="name">My Profile</div><div class="muted">Explorer • New member</div></div></div><button class="btn alt" id="edit">Edit profile</button></div>
+</section>
+</main>
+<nav class="bottom"><button class="active" data-page="home">⌂<br>Home</button><button data-page="explore">⌕<br>Explore</button><button data-page="messages">◌<br>Messages</button><button data-page="profile">◉<br>Profile</button></nav>
+</div>
+<script>
+const pages=[...document.querySelectorAll('.page')], nav=[...document.querySelectorAll('[data-page]')];
+function show(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));nav.forEach(b=>b.classList.toggle('active',b.dataset.page===id));scrollTo(0,0)}
+nav.forEach(b=>b.addEventListener('click',()=>show(b.dataset.page)));
+document.querySelectorAll('.connect').forEach(b=>b.addEventListener('click',()=>{b.textContent='Connected ✓';b.classList.add('alt');b.disabled=true}));
+document.querySelectorAll('.join').forEach(b=>b.addEventListener('click',()=>{b.textContent='Joined ✓';b.classList.add('alt');b.disabled=true}));
+document.getElementById('send').addEventListener('click',send);
+document.getElementById('message').addEventListener('keydown',e=>{if(e.key==='Enter')send()});
+function send(){const i=document.getElementById('message'),v=i.value.trim();if(!v)return;const d=document.createElement('div');d.className='bubble mine';d.textContent=v;document.getElementById('chat').appendChild(d);i.value='';}
+document.getElementById('edit').addEventListener('click',()=>alert('Firebase authentication/profile editing can be connected next.'));
+document.getElementById('search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.item').forEach(x=>x.style.display=x.innerText.toLowerCase().includes(q)?'block':'none')});
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("sw.js").catch(()=>{});
+}
+</script>
+</body>
+</html>
